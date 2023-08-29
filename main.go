@@ -4,6 +4,7 @@ import (
 	"github.com/joho/godotenv"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -19,4 +20,13 @@ func GetString(key string) string {
 
 func GetSlice(key string) []string {
 	return strings.Split(os.Getenv(key), ",")
+}
+
+func GetInt(key string) int {
+	num, err := strconv.Atoi(os.Getenv(key))
+	if err != nil {
+		return 0
+	}
+
+	return num
 }
