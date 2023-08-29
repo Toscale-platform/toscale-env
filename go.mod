@@ -1,4 +1,4 @@
-module github.com/dajeo/toscale-env
+module toscale-env
 
 go 1.21
 
