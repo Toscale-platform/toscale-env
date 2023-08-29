@@ -28,4 +28,10 @@ func TestEnv(t *testing.T) {
 	if slices.Compare(gotSlice, wantSlice) != 0 {
 		t.Errorf("got %q, wanted %q", gotSlice, wantSlice)
 	}
+
+	gotBool := GetBool("BOOL")
+
+	if gotBool != true {
+		t.Errorf("got %t, wanted %t", gotBool, true)
+	}
 }

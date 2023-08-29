@@ -23,10 +23,19 @@ func GetSlice(key string) []string {
 }
 
 func GetInt(key string) int {
-	num, err := strconv.Atoi(os.Getenv(key))
+	value, err := strconv.Atoi(os.Getenv(key))
 	if err != nil {
 		return 0
 	}
 
-	return num
+	return value
+}
+
+func GetBool(key string) bool {
+	value, err := strconv.ParseBool(os.Getenv(key))
+	if err != nil {
+		return false
+	}
+
+	return value
 }
