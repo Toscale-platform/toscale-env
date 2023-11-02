@@ -20,13 +20,13 @@ Then in your Go app you can do something like:
 package main
 
 import (
-	env "github.com/Toscale-platform/toscale-env"
+    env "github.com/Toscale-platform/toscale-env"
 )
 
 func main() {
-	token := env.GetString("TOKEN")
-	port := env.GetInt("PORT")
-	exchanges := env.GetSlice("EXCHANGES")
-	debug := env.GetBool("DEBUG")
+    token := env.GetString("TOKEN")
+    port := env.GetInt("PORT")
+    exchanges := env.GetSlice("EXCHANGES")
+    debug := env.GetBool("DEBUG")
 }
 ```
