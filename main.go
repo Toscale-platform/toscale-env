@@ -6,23 +6,27 @@ import (
 	"strings"
 )
 
-var env = make(map[string]string)
+var env map[string]string
 
-func Init() {
-	var err error
+func get(key string) string {
+	if env == nil {
+		e, err := godotenv.Read()
+		if err != nil {
+			panic("error loading env: " + err.Error())
+		}
 
-	env, err = godotenv.Read()
-	if err != nil {
-		panic("error loading env: " + err.Error())
+		env = e
 	}
-}
 
-func GetString(key string) string {
 	return env[key]
 }
 
+func GetString(key string) string {
+	return get(key)
+}
+
 func GetInt(key string) int {
-	value, err := strconv.Atoi(env[key])
+	value, err := strconv.Atoi(get(key))
 	if err != nil {
 		return 0
 	}
@@ -31,8 +35,7 @@ func GetInt(key string) int {
 }
 
 func GetSlice(key string) []string {
-	value := env[key]
-
+	value := get(key)
 	if value == "" {
 		return []string{}
 	}

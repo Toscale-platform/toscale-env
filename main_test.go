@@ -6,8 +6,6 @@ import (
 )
 
 func TestGetString(t *testing.T) {
-	Init()
-
 	gotStr := GetString("STR")
 	wantStr := "text"
 
@@ -17,8 +15,6 @@ func TestGetString(t *testing.T) {
 }
 
 func TestGetInt(t *testing.T) {
-	Init()
-
 	gotInt := GetInt("INT")
 	wantInt := 100
 
@@ -28,8 +24,6 @@ func TestGetInt(t *testing.T) {
 }
 
 func TestGetSlice(t *testing.T) {
-	Init()
-
 	gotSlice := GetSlice("SLICE")
 	wantSlice := []string{"el1", "el2", "el3"}
 
@@ -39,8 +33,6 @@ func TestGetSlice(t *testing.T) {
 }
 
 func TestGetBool(t *testing.T) {
-	Init()
-
 	gotBool := GetBool("BOOL")
 
 	if gotBool != true {
@@ -49,8 +41,6 @@ func TestGetBool(t *testing.T) {
 }
 
 func TestEmptyString(t *testing.T) {
-	Init()
-
 	gotEmptyString := GetString("NOT EXIST KEY")
 	wantEmptyString := ""
 
@@ -60,8 +50,6 @@ func TestEmptyString(t *testing.T) {
 }
 
 func TestEmptyInt(t *testing.T) {
-	Init()
-
 	gotInt := GetInt("NOT EXIST KEY")
 	wantInt := 0
 
@@ -71,8 +59,6 @@ func TestEmptyInt(t *testing.T) {
 }
 
 func TestEmptySlice(t *testing.T) {
-	Init()
-
 	gotSlice := GetSlice("NOT EXIST KEY")
 	var wantSlice []string
 
@@ -82,8 +68,6 @@ func TestEmptySlice(t *testing.T) {
 }
 
 func TestEmptyBool(t *testing.T) {
-	Init()
-
 	gotBool := GetBool("NOT EXIST KEY")
 
 	if gotBool != false {
