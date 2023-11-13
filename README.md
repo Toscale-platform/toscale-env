@@ -1,5 +1,5 @@
 # Toscale Env
-A simple env wrapper developed on top of [joho/godotenv](https://github.com/joho/godotenv)
+A simple env wrapper developed on top of [spf13/viper](https://github.com/spf13/viper)
 
 ## Installation
 ```shell
@@ -9,7 +9,7 @@ go get github.com/Toscale-platform/toscale-env
 ## Usage
 Add your application configuration to your .env file in the root of your project:
 ```dotenv
-TOKEN=BUCKET
+TOKEN=ABC
 PORT=8080
 EXCHANGES=binance,bitfinex
 DEBUG=true
